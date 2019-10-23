@@ -9,19 +9,21 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+@Component
 public class ProductRepository {
 
     private final JdbcTemplate jdbcTemplate;
     private final ProductRowMapper productRowMapper = new ProductRowMapper();
 
     public ProductRepository(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public Product get(int id) {

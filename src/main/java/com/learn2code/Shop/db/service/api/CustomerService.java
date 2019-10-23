@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CustomerService {
 
-    List<Customer> getCustomer();
+    List<Customer> getCustomers();
 
     @Nullable
     Customer get(int id);
